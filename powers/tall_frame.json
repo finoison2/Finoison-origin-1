@@ -1,0 +1,11 @@
+{
+  "type": "pehkui:modify_scale",
+  "hidden": true,
+  "scale_types": [
+    "pehkui:base"
+  ],
+  "modifier": {
+    "operation": "multiply_base_additive",
+    "value": 0.1111111
+  }
+}

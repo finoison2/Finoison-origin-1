@@ -1,0 +1,44 @@
+{
+  "type": "origins:action_on_callback",
+  "hidden": true,
+  "entity_action_added": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:execute_command",
+        "command": "scoreboard objectives add finoison_ds dummy",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "scoreboard objectives add finoison_sdcd dummy",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "scoreboard objectives add finoison_rccd dummy",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "scoreboard objectives add finoison_bmcd dummy",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "scoreboard objectives add finoison_ubcd dummy",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "scoreboard objectives add finoison_hud dummy",
+        "permission_level": 4
+      }
+    ]
+  },
+  "entity_action_respawned": {
+    "type": "origins:execute_command",
+    "command": "function finoison:deathswitch_reset",
+    "permission_level": 4
+  }
+}

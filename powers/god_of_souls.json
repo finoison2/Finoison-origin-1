@@ -1,0 +1,9 @@
+{
+  "type": "origins:modify_xp_gain",
+  "name": "God of Souls",
+  "description": "Every soul that falls to you gives twice what it should. Experience is doubled, and Mending repairs at twice the speed.",
+  "modifier": {
+    "operation": "multiply_base_additive",
+    "value": 1.0
+  }
+}

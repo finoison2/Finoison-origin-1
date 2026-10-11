@@ -1,0 +1,38 @@
+{
+  "type": "origins:prevent_death",
+  "name": "Deathswitch",
+  "description": "Death is only a form. Your spirit slips free with whatever energy you have left; take a living creature's perspective in time and it dies in your place, leaving you at half a heart. Each use costs a heart container, and your tenth death is final. Failing or spending your energy closes the door between life and death.",
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "genericKill",
+    "inverted": true
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:resource",
+        "resource": "finoison:spectral_energy_stacks",
+        "comparison": ">=",
+        "compare_to": 10
+      },
+      {
+        "type": "origins:command",
+        "command": "execute if entity @s[tag=finoison_perspective]",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      {
+        "type": "origins:command",
+        "command": "execute unless score @s finoison_ds matches 9..",
+        "comparison": "==",
+        "compare_to": 1
+      }
+    ]
+  },
+  "entity_action": {
+    "type": "origins:execute_command",
+    "command": "function finoison:deathswitch",
+    "permission_level": 4
+  }
+}

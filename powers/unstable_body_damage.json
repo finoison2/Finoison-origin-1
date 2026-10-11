@@ -1,0 +1,10 @@
+{
+  "type": "origins:self_action_when_hit",
+  "hidden": true,
+  "entity_action": {
+    "type": "origins:execute_command",
+    "command": "function finoison:unstable_body",
+    "permission_level": 4
+  },
+  "cooldown": 1
+}

@@ -1,0 +1,20 @@
+{
+  "type": "origins:multiple",
+  "name": "Meta Movement",
+  "description": "The world moves one step slower than you do. Faster on foot, sharper in the air.",
+  "land": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_base",
+      "value": 0.25
+    }
+  },
+  "air": {
+    "type": "origins:modify_air_speed",
+    "modifier": {
+      "operation": "multiply_base_additive",
+      "value": 0.25
+    }
+  }
+}

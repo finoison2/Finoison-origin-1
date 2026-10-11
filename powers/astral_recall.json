@@ -1,0 +1,41 @@
+{
+  "type": "origins:active_self",
+  "name": "Demonic Summoning",
+  "description": "Call your friend to your side, ready to annihilate.",
+  "entity_action": {
+    "type": "origins:execute_command",
+    "command": "function finoison:pet_recall",
+    "permission_level": 4
+  },
+  "cooldown": 200,
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+    "bar_index": 0,
+    "condition": {
+      "type": "origins:riding",
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:wither"
+        }
+      },
+      "inverted": true
+    }
+  },
+  "key": {
+    "key": "key.loadToolbarActivator"
+  },
+  "condition": {
+    "type": "origins:riding",
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:wither"
+      }
+    },
+    "inverted": true
+  }
+}

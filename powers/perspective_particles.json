@@ -1,0 +1,26 @@
+{
+  "type": "origins:action_over_time",
+  "hidden": true,
+  "interval": 2,
+  "condition": {
+    "type": "origins:command",
+    "command": "execute if entity @s[tag=finoison_perspective]",
+    "comparison": "==",
+    "compare_to": 1
+  },
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:execute_command",
+        "command": "particle minecraft:dust 0.01 0.01 0.01 1.4 ~ ~0.9 ~ 0.35 0.6 0.35 0 12 force",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "particle minecraft:smoke ~ ~0.9 ~ 0.25 0.5 0.25 0.01 4 force",
+        "permission_level": 4
+      }
+    ]
+  }
+}

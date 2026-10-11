@@ -1,0 +1,16 @@
+{
+  "type": "origins:action_over_time",
+  "hidden": true,
+  "interval": 1,
+  "condition": {
+    "type": "origins:command",
+    "command": "execute if entity @s[tag=finoison_deathswitch]",
+    "comparison": "==",
+    "compare_to": 1
+  },
+  "entity_action": {
+    "type": "origins:execute_command",
+    "command": "function finoison:deathswitch_tick",
+    "permission_level": 4
+  }
+}

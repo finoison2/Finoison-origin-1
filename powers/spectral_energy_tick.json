@@ -1,0 +1,33 @@
+{
+  "type": "origins:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "entity_action": {
+    "type": "origins:if_else",
+    "condition": {
+      "type": "origins:command",
+      "command": "execute if entity @s[tag=finoison_perspective]",
+      "comparison": "==",
+      "compare_to": 1
+    },
+    "if_action": {
+      "type": "origins:change_resource",
+      "resource": "finoison:spectral_energy_stacks",
+      "change": -1
+    },
+    "else_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:command",
+        "command": "execute if entity @s[gamemode=survival]",
+        "comparison": "==",
+        "compare_to": 1
+      },
+      "if_action": {
+        "type": "origins:change_resource",
+        "resource": "finoison:spectral_energy_stacks",
+        "change": 1
+      }
+    }
+  }
+}

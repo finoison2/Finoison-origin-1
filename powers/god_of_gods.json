@@ -1,0 +1,29 @@
+{
+  "type": "origins:invulnerability",
+  "name": "God of Gods",
+  "description": "As the owner of a god, now your seen as one, however the gods...disagree. Good they cannot harm you.",
+  "damage_condition": {
+    "type": "origins:attacker",
+    "entity_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:elder_guardian"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:warden"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:ender_dragon"
+        },
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:wither"
+        }
+      ]
+    }
+  }
+}

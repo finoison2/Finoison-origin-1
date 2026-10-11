@@ -1,0 +1,31 @@
+{
+  "icon": "minecraft:structure_block",
+  "order": 0,
+  "impact": 3,
+  "name": "Finoison",
+  "description": "You don't belong, and you never will.",
+  "powers": [
+    "finoison:spectral_switch",
+    "finoison:spectral_energy",
+    "finoison:spectral_energy_tick",
+    "finoison:perspective_particles",
+    "finoison:meta_movement",
+    "finoison:deathswitch",
+    "finoison:deathswitch_tick",
+    "finoison:deathswitch_hearts",
+    "finoison:deathswitch_cap",
+    "finoison:cursed_cure",
+    "finoison:cursed_cure_overlay",
+    "finoison:unstable_body",
+    "finoison:unstable_body_damage",
+    "finoison:bloodlust",
+    "finoison:god_of_souls",
+    "finoison:satchel"
+  ],
+  "upgrades": [
+    {
+      "condition": "minecraft:nether/explore_nether",
+      "origin": "finoison:finoison_evolved"
+    }
+  ]
+}

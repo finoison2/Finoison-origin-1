@@ -1,0 +1,21 @@
+{
+  "type": "origins:modify_damage_taken",
+  "hidden": true,
+  "damage_condition": {
+    "type": "origins:and",
+    "conditions": [
+      { "type": "origins:name", "name": "genericKill", "inverted": true },
+      { "type": "origins:name", "name": "outOfWorld", "inverted": true }
+    ]
+  },
+  "modifiers": [
+    { "operation": "multiply_total_multiplicative", "value": -1 },
+    { "operation": "add_total_late", "value": 2 }
+  ],
+  "condition": {
+    "type": "origins:command",
+    "command": "execute unless entity @s[nbt={AbsorptionAmount:0.0f}]",
+    "comparison": "==",
+    "compare_to": 1
+  }
+}

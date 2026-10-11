@@ -1,0 +1,18 @@
+{
+  "type": "origins:conditioned_attribute",
+  "hidden": true,
+  "modifier": {
+    "attribute": "minecraft:generic.max_health",
+    "operation": "addition",
+    "value": -1000,
+    "name": "Deathswitch cap"
+  },
+  "update_health": false,
+  "tick_rate": 1,
+  "condition": {
+    "type": "origins:command",
+    "command": "execute if entity @s[tag=finoison_deathswitch]",
+    "comparison": "==",
+    "compare_to": 1
+  }
+}

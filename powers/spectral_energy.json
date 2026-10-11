@@ -1,0 +1,50 @@
+{
+  "type": "origins:multiple",
+  "name": "Spectral Energy",
+  "description": "The energy needed to leave your body behind.",
+  "stacks": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 10,
+    "start_value": 10,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 8,
+      "condition": {
+        "type": "origins:riding",
+        "bientity_condition": {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:wither"
+          }
+        },
+        "inverted": true
+      }
+    },
+    "min_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:command",
+        "command": "execute if entity @s[tag=finoison_perspective]",
+        "comparison": "==",
+        "compare_to": 1
+      },
+      "if_action": {
+        "type": "origins:execute_command",
+        "command": "function finoison:perspective_exit",
+        "permission_level": 4
+      }
+    }
+  },
+  "reset": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:change_resource",
+      "resource": "finoison:spectral_energy_stacks",
+      "operation": "set",
+      "change": 10
+    }
+  }
+}

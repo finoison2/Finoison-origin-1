@@ -1,0 +1,12 @@
+{
+  "type": "origins:invulnerability",
+  "name": "Lord of the Dead",
+  "description": "The dead have no claim on you. Nothing that walks beyond the grave can lay a hand upon you.",
+  "damage_condition": {
+    "type": "origins:attacker",
+    "entity_condition": {
+      "type": "origins:entity_group",
+      "group": "undead"
+    }
+  }
+}

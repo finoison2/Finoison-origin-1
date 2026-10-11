@@ -1,0 +1,96 @@
+{
+  "type": "origins:multiple",
+  "name": "Strike Down",
+  "description": "Some names are only spoken once. Turn your gaze upon what must end, and let the dark answer.",
+  "charge": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1200,
+    "start_value": 1200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "bar_index": 0,
+      "condition": {
+        "type": "origins:riding",
+        "bientity_condition": {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:wither"
+          }
+        },
+        "inverted": true
+      }
+    }
+  },
+  "regen": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "finoison:strike_down_charge",
+      "change": 1
+    }
+  },
+  "use": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.saveToolbarActivator"
+    },
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "finoison:strike_down_charge",
+        "comparison": ">=",
+        "compare_to": 1200
+      },
+      "if_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "function finoison:strike_start",
+            "permission_level": 4
+          },
+          {
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:command",
+              "command": "execute if entity @s[tag=finoison_strike_locked]",
+              "comparison": "==",
+              "compare_to": 1
+            },
+            "if_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:change_resource",
+                  "resource": "finoison:strike_down_charge",
+                  "operation": "set",
+                  "change": 0
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "tag @s remove finoison_strike_locked",
+                  "permission_level": 4
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "scoreboard players set @s finoison_sdcd 1200",
+                  "permission_level": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "else_action": {
+        "type": "origins:execute_command",
+        "command": "title @s actionbar {\"text\":\"Not yet\",\"color\":\"dark_gray\"}",
+        "permission_level": 4
+      }
+    }
+  }
+}
